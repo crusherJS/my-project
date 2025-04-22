@@ -1,11 +1,9 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
-import ThemeToggle from './ThemeToggle';
 
 function Navbar() {
   const { user, logout } = useAuth();
-  const { theme, toggleTheme } = useTheme();
 
   return (
     <nav className="bg-white dark:bg-gray-800 shadow-lg mb-8">
@@ -75,7 +73,6 @@ function Navbar() {
           )}
         </div>
         <div className="flex items-center space-x-4">
-          <ThemeToggle />
           {user ? (
             <button
               onClick={logout}
